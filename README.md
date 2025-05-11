@@ -27,7 +27,7 @@ Frontend: http://localhost:3000
 
 Backend API: http://localhost:5000
 
-# Автор
+## Автор
 
 **Меркурьев М. А.**\
 *Группа: М9124-09.04.04рпис*\
