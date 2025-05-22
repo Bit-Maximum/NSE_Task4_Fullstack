@@ -18,6 +18,9 @@ interface City {
     zipcode: string;
 }
 
+interface ApiResponse {
+    cities: City[];
+}
 
 function CitiesGrid() {
     const [rows, setRows] = useState<GridRowsProp>([]);
@@ -31,9 +34,9 @@ function CitiesGrid() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://your-backend-api-url/cities'); // Замените на ваш URL
-                const data: City[] = await response.json();
-                setRows(data);
+                const response = await fetch('http://127.0.0.1:5000/api/v1/cities'); // Замените на ваш URL
+                const data: ApiResponse = await response.json();
+                setRows(data.cities);
             } catch (err) {
                 console.error("Ошибка при загрузке данных:", err);
             }
